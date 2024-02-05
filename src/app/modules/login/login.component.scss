@@ -1,0 +1,54 @@
+
+
+
+.login-container {
+
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+
+}
+button{width: 100%; }
+.button{width: 100%;}
+mat-form-field{
+  width: 100%;
+}
+.centerfields{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 20px 10px;
+  padding-bottom: 50px;
+}
+mat-card {
+  border: 12px !important;
+  border-radius: 35px !important;
+  width: 50em;
+
+
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.089);
+}
+mat-card-footer{
+
+ padding: 0rem 1.799999rem 0rem 1.7999999999rem;
+}
+mat-progress-bar{
+  border-radius: 3px;
+}
+
+footer{
+  position:fixed;
+  left:20px;
+  bottom:.5rem;
+  z-index:1;
+  right:0;
+}
+footer small {
+  float:right;
+  clear:both;
+}
+

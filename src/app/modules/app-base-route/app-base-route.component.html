@@ -1,0 +1,39 @@
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav #navb mode="over" [autoFocus]="false">
+    <mat-card class="userblue">
+      <mat-card-header>
+        <img width="81" height="81" src="../../../assets/ic-user.svg" />
+      </mat-card-header>
+      <p class="subtitle">{{legajo}}</p>
+    </mat-card>
+    <!-- lista de enlaces -->
+    <mat-nav-list>
+      <mat-list-item *ngFor="let section of sectionsItems" [routerLink]="section.url" [routerLinkActive]="['is-active']"
+        (click)="navb.toggle() ">
+        <mat-icon class="rend-icon" matListItemIcon>{{section.icon}}</mat-icon>
+        <a matLine routerLinkActive="active-link">{{section.label}}</a>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item [routerLink]="['/login']" (click)="logOut()" [routerLinkActive]="['active']">
+        <mat-icon class="rend-icon" matListItemIcon>
+          exit_to_app
+        </mat-icon>
+        <a matLine>Salir</a>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar">
+      <button mat-icon-button (click)="navb.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1>{{title}}</h1>
+
+    </mat-toolbar>
+    <div class="container p-2 mt-2 bg-cyan-50">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,1 +1,160 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@import 'primeflex/themes/primeone-light.css';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$backofficeRendicion-primary: mat.define-palette(mat.$indigo-palette);
+$backofficeRendicion-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$backofficeRendicion-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$backofficeRendicion-theme: mat.define-light-theme((
+  color: (
+    primary: $backofficeRendicion-primary,
+    accent: $backofficeRendicion-accent,
+    warn: $backofficeRendicion-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($backofficeRendicion-theme);
+@for $i from 0 through 24 {
+  .mat-mdc-card.mat-elevation-z#{$i} {
+    @include mat.elevation($i);
+  }
+}
+// @media only screen and (min-width: 768px) {
+  .mat-mdc-form-field.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill .mat-mdc-form-field-text-prefix
+  {
+    place-self: center !important;
+    letter-spacing: 0.01em !important;
+  }
+  .mat-mdc-form-field-infix{
+    padding-top: 19px !important;
+    padding-left: 5px !important;
+  }
+// }
+.modal-container .cdk-overlay-container {
+  z-index: 2200;
+}
+
+.custom-datepicker .cdk-overlay-container {
+  z-index: 2300; /* Ensure a higher value than the modal's */
+}
+
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+
+
+// @use '@angular/material' as mat;
+
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat.core();
+// @import 'primeflex/themes/primeone-light.css';
+
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $backofficeRendicion-primary: mat.define-palette(mat.$indigo-palette);
+// $backofficeRendicion-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $backofficeRendicion-warn: mat.define-palette(mat.$red-palette);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $backofficeRendicion-theme: mat.define-light-theme((
+//   color: (
+//     primary: $backofficeRendicion-primary,
+//     accent: $backofficeRendicion-accent,
+//     warn: $backofficeRendicion-warn,
+//   ),
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($backofficeRendicion-theme);
+
+// /* You can add global styles to this file, and also import other style files */
+// @for $i from 0 through 24 {
+//   .mat-mdc-card.mat-elevation-z#{$i} {
+//     @include mat.elevation($i);
+//   }
+// }
+// .mat-mdc-form-field.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill .mat-mdc-form-field-text-prefix
+// {
+//   place-self: center !important;
+//   letter-spacing: 0.01em !important;
+// }
+
+
+
+
+// // @import 'node_modules/primeflex/themes/saga-blue.css';
+// html, body { height:100%}
+// body { margin: 0; font-family:"Helvetica Neue", sans-serif; }
+
+
+// // @use '@angular/material' as mat;
+// // // @import '@angular/material/theming' ;
+
+// // // @include mat-core();
+
+// // // /************************
+// // //  Theming section
+// // // ************************/
+
+
+
+// // // // Light theme
+// // // $light-primary: mat-palette($mat-indigo);
+// // // $light-accent:  mat-palette($mat-pink, A200, A100, A400);
+// // // $light-theme:   mat-light-theme($light-primary, $light-accent);
+
+// // // @media (prefers-color-scheme: light) {
+// // //   @include angular-material-theme($light-theme);
+
+// // // }
+
+// // // // Dark theme
+// // // $dark-primary: mat-palette($mat-blue-grey);
+// // // $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+// // // $dark-warn:    mat-palette($mat-deep-orange);
+// // // $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// // // @media (prefers-color-scheme: dark) {
+// // //   @include angular-material-theme($dark-theme);
+
+// // // }
+// // // /* You can add global styles to this file, and also import other style files */
+
+// // // @for $i from 0 through 24 {
+// // //   .mat-mdc-card.mat-elevation-z#{$i} {
+// // //     @include mat.elevation($i);
+// // //   }
+// // // }
+// // // html, body { height:100%}
+// // // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family:"Helvetica", sans-serif; }

@@ -1,0 +1,33 @@
+<div class="login-container">
+  <mat-card class="mat-elevation-z10" >
+    <div class="centerfields">
+    <mat-card-title>  <img class="imgcalc" src="assets/logo.png"/></mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="Ok()">
+          <mat-form-field>
+            <mat-label>Usuario</mat-label>
+            <input type="text" matInput formControlName="user">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required>
+          </mat-form-field>
+
+        <div class="button" >
+          <button mat-raised-button type="submit" color="primary" mat-button>INGRESAR</button>
+        </div>
+      </form>
+
+    </mat-card-content>
+  </div>
+
+    <mat-card-footer [hidden]="!spinnerLogin">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+
+</div>
+<footer>
+  <small>front {{version}}</small>
+  <small>back {{versionBack}}</small>
+</footer>

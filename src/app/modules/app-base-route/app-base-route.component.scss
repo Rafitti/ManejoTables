@@ -1,0 +1,64 @@
+.toolbar {
+  max-height: 3.5rem;
+  padding: 0 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(28, 55, 112);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.217);
+ }
+ .toolbar h1{
+   font-size: 1.3rem;
+   letter-spacing: 0.01em;
+   color: #424242;
+   font-weight:normal;
+   padding-left: 1.3rem;
+   padding-right: 1rem;
+ }
+
+ .spacer {
+   flex:1 1 auto;
+ }
+
+ .userblue{
+   background-color: #12295c;
+   width: 19rem;
+   height: 10.55rem;
+   border-radius: 0 !important;
+   padding-top: 0.8rem;
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+ }
+
+ .subtitle{
+   color: rgb(255, 255, 255);
+   padding-top: 0.3rem;
+   font-size: 1rem;
+   font-weight: 400;}
+
+   ::ng-deep .mat-drawer-backdrop.mat-drawer-shown{
+     --mat-sidenav-scrim-color: #37373746;
+   }
+   .rend-icon{
+     color:#12295c !important;
+   }
+
+
+   mat-nav-list mat-list-item:hover{
+     background: linear-gradient(90deg, rgba(149,156,205,0.9136029411764706) 7%, rgba(154,172,222,0.8575805322128851) 25%, rgba(218,230,255,0.8799894957983193) 100%);
+     font-size: 1.01em;
+   }
+
+   .is-active{
+     background-color: #0b3ca67d;
+     font-size: 1.01em;
+   }
+
+   .container{
+   background-color: white;}
+
+
+   mat-nav-list mat-list-item a{
+    font-weight: 400 !important;
+    font-size: 1em !important;
+    letter-spacing: 0 !important;
+   }
